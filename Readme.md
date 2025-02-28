@@ -12,7 +12,7 @@ Travel Blog and Inspiration: A blog section filled with inspiring stories, trave
 Booking Integration: A simple way for users to book their peaceful getaway directly through trusted partners.
 # Tech Stack:
 
-Frontend: React.js for a dynamic and responsive user interface, along with Tailwind CSS for sleek and customizable design elements.
+l: React.js for a dynamic and responsive user interface, along with Tailwind CSS for sleek and customizable design elements.
 Backend: Node.js with Express for handling API requests and server-side logic. MongoDB will be used for the database to store user data and destination information.
 Authentication: OAuth2 for secure user login and session management.
 Other Tools: AWS for hosting, Google Maps API for interactive destination search, and Stripe for payment integration (if booking is involved).
