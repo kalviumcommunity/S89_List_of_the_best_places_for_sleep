@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "list of the bsst places for sleep",
     "version": "1.0.0",
     "description": "A brief description of your project",
@@ -10,4 +11,9 @@
         "express": "^4.17.1",
         "mongoose": "^8.12.1"
     }
+=======
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+>>>>>>> 67abfbdbbb64bc8af8501376cd0021b15d021216
 }
