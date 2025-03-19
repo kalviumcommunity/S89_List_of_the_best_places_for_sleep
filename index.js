@@ -8,6 +8,7 @@ app.get('/ping', (req, res) => {
     } catch (error) {
         res.status(500).send({msg:"something went wrong"})
     }
+    
 });
 
 
