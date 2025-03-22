@@ -1,19 +1,9 @@
 {
-<<<<<<< HEAD
-    "name": "list of the bsst places for sleep",
-    "version": "1.0.0",
-    "description": "A brief description of your project",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js"
-    },
-    "dependencies": {
-        "express": "^4.17.1",
-        "mongoose": "^8.12.1"
-    }
-=======
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
->>>>>>> 67abfbdbbb64bc8af8501376cd0021b15d021216
 }
