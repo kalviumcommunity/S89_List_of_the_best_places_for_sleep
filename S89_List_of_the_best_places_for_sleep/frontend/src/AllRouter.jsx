@@ -5,6 +5,7 @@ const AllRoutes = () => {
     return (
         <Routes>
             <Route path='/' element={<About/>} />
+            <Route path='/about' element={<About/>} />
             </Routes>
     )
 }

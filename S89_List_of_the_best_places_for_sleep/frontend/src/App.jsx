@@ -1,17 +1,13 @@
-import './App.css'
-import { BrowserRouter } from 'react-router-dom'
-import AllRouter from './AllRouter'
+import React from 'react';
+import SleepPlaceCard from './components/SleepPlaceCard';
 
 function App() {
-
   return (
-    <>
-     <BrowserRouter>
-         <AllRouter/>
-      </BrowserRouter>
-
-    </>
-  )
+    <div>
+      <h1>Best Places for Sleep</h1>
+      <SleepPlaceCard />
+    </div>
+  );
 }
 
-export default App
+export default App;
