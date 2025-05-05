@@ -1,22 +1,34 @@
 const express = require('express');
-const app = express();
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+const routes = require('./routes');
 
-app.get('/ping', (req, res) => {
-    try {
-        res.status(200).send({msg:'pong'});
-    } catch (error) {
-        res.status(500).send({msg:"something went wrong"})
-    }
-    
+// Load environment variables
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(bodyParser.json());
+app.use('/api', routes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send({ error: 'Something went wrong!' });
 });
 
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('MongoDB connection error:', err));
 
-app.listen(3000, async() => {
-    try {
-        await mongoose.connect("mongodb+srv://bhumireddysahithi:Sa%40041006@cluster0.wuzj0.mongodb.net/");
-        console.log("Server connected successfully!")
-    } catch (error) {
-        console.log("Error")
-    }
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
