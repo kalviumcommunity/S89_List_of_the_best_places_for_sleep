@@ -1,4 +1,5 @@
 const express = require('express');
+const Place = require('./schema'); // Import the Place model
 
 const router = express.Router();
 
@@ -30,6 +31,17 @@ router.put('/places/:id', (req, res) => {
 router.delete('/places/:id', (req, res) => {
     const placeId = req.params.id;
     res.send(`Place with ID: ${placeId} deleted`);
+});
+
+// New route: Get places created by a specific user
+router.get('/places/created-by/:userId', async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const places = await Place.find({ createdBy: userId });
+        res.json(places);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch places for the user' });
+    }
 });
 
 module.exports = router;
